@@ -1,0 +1,19 @@
+.bio-container {
+  display: flex;
+  align-items: center;
+  padding: 0rem;
+  flex: 1;
+  min-height: calc(100vh - 200px);
+}
+
+.bio-image {
+  max-width: 400px; /* Augmenter la taille maximale de l'image */
+  height: auto;
+  margin-right: 20px; /* Ajouter un petit espace entre l'image et le texte */
+}
+
+.bio-text {
+  flex: 1;
+  padding-left: 40px; /* Décaler le texte un peu plus vers la droite */
+
+}

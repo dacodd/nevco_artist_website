@@ -1,0 +1,117 @@
+/* Importation de la police Copperplate */
+@import url('https://fonts.googleapis.com/css2?family=Copperplate&display=swap');
+
+body {
+  font-family: 'Copperplate', sans-serif;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+  position: relative;
+}
+
+.header-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+header h1 {
+  font-size: 4em; /* Augmenter la taille de la police du nom de l'artiste */
+  font-weight: normal; /* Rendre le texte moins gras */
+  margin: 0;
+}
+
+header h1 .artist-name {
+  text-decoration: none;
+  color: black;
+}
+
+header h1 .artist-name:hover {
+  text-decoration: none; /* Enlever la barre qui s'affiche en dessous du nom de l'artiste */
+}
+
+.language-buttons {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.language-buttons button {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.language-buttons button:hover {
+  background-color: grey;
+}
+
+nav {
+  margin-top: 20px; /* Descendre un peu la barre de navigation */
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: black;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
+  flex: 1;
+  min-height: calc(100vh - 200px);
+  justify-content: center;
+}
+
+form input, form textarea, form button {
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 16px;
+}
+
+form button {
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: grey;
+}
+
+img {
+  max-width: 100%;
+  height: 650px;
+  margin: 10px 0;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}

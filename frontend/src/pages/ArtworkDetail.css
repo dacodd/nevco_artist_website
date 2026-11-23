@@ -1,0 +1,154 @@
+.artwork-detail-container {
+  padding: 20px;
+  margin-top: 5px;
+  flex: 1;
+  min-height: calc(100vh - 200px);
+
+  
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 12px 20px;
+  background-color: #000;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  margin-right: 0;
+  
+}
+
+.back-link:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.artwork-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'josefin sans', 'Century Gothic', sans-serif;
+}
+
+.artwork-image-wrapper {
+  max-width: 500px;
+  width: auto;
+  flex-shrink: 0;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.artwork-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 74px;
+}
+
+.gallery-thumbnail {
+  padding: 0;
+  border: 1px solid transparent;
+  background: transparent;
+  cursor: pointer;
+}
+
+.gallery-thumbnail.active,
+.gallery-thumbnail:hover {
+  border-color: #000;
+}
+
+.gallery-thumbnail img {
+  display: block;
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  margin: 0;
+}
+
+.artwork-image {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto !important;
+  object-fit: contain;
+  max-height: none;
+}
+
+.magnifier {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #000;
+  background-repeat: no-repeat;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+  cursor: zoom-in;
+}
+
+.artwork-info {
+  width: min(100%, 900px);
+  text-align: center;
+}
+
+.artwork-info h1 {
+  font-size: 2.5em;
+  margin: 0 0 20px 0;
+  text-align: left;
+}
+
+.artwork-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 20px;
+  position: relative;
+  top: 10px;
+  justify-items: center;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.detail-item.full-width {
+  grid-column: 1 / -1;
+}
+
+.detail-label {
+  font-weight: bold;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  color: #666;
+}
+
+.detail-value {
+  font-size: 1em;
+  color: #333;
+}
+
+.detail-item.full-width .detail-value {
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+@media (max-width: 700px) {
+  .artwork-detail {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .artwork-gallery {
+    flex-direction: row;
+    width: auto;
+  }
+}
