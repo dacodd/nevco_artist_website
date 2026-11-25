@@ -20,7 +20,7 @@ function Contact() {
     e.preventDefault();
     
     const subject = `${formData.firstName} ${formData.lastName}`;
-    const body = `Email: ${formData.email}\n\n${formData.message}`;
+    const body = `\n${formData.message}`;
     
     const mailtoLink = `mailto:nevzat.copur@icloud.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.location.href = mailtoLink;
