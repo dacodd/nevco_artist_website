@@ -1,5 +1,5 @@
 import { ApolloServer } from '@apollo/server';
-import { startStandaloneServer } from '@apollo/server/standalone';
+import { startServerAndCreateNextHandler } from '@as-integrations/next';
 
 const typeDefs = `#graphql
   type Artwork {
@@ -165,7 +165,16 @@ const server = new ApolloServer({
   resolvers,
 });
 
-const { url } = await startStandaloneServer(server, { listen: { port: 4000 } });
+const handler = startServerAndCreateNextHandler(server);
 
+export default async function (req, res) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 
-console.log(`🚀 Server listening at: ${url}`);
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+
+  return handler(req, res);
+}
