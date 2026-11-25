@@ -50,19 +50,8 @@ const typeDefs = `#graphql
     message: String!
   }
 
-  input UpdateArtworkInput {
-    id: ID!
-    title: String
-    imageUrl: String
-    year: String
-    technique: String
-    dimensions: String
-    description: String
-  }
-
   type Mutation {
     sendContact(input: ContactInput!): Boolean
-    updateArtwork(input: UpdateArtworkInput!): Artwork
   }
 
   
@@ -150,12 +139,6 @@ const resolvers = {
     sendContact: (_, { input }) => {
       console.log('Contact form submitted:', input);
       return true;
-    },
-    updateArtwork: (_, { input }) => {
-      const artwork = artworks.find((a) => a.id === input.id);
-      if (!artwork) return null;
-      Object.assign(artwork, input);
-      return artwork;
     },
   },
 };
