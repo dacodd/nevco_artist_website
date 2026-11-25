@@ -6,8 +6,9 @@ import App from './App.jsx';
 import './index.css';
 import './i18n';  // Importation de la configuration i18n
 
+
 const client = new ApolloClient({
-  uri: 'nevcoartistwebsite-api.vercel.app/graphql',
+  uri: 'nevcoartistwebsite-api.vercel.app',
   cache: new InMemoryCache(),
 });
 
